@@ -17,7 +17,9 @@ class NavigationFixture(unittest.TestCase):
     def setUp(self):
         temporary = tempfile.TemporaryDirectory()
         self.addCleanup(temporary.cleanup)
-        self.root = Path(temporary.name)
+        # Resolve symlinks: ficelo reports real paths, and macOS temporary
+        # folders sit behind a /var -> /private/var link.
+        self.root = Path(temporary.name).resolve()
 
     def file(self, name, content="hello"):
         target = self.root / name

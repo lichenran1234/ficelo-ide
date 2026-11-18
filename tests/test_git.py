@@ -20,7 +20,9 @@ class RepoCase(unittest.TestCase):
     files — are exactly where a fake would be wrong."""
 
     def setUp(self):
-        self.repo = Path(tempfile.mkdtemp())
+        # Resolve symlinks: ficelo reports real paths, and macOS temporary
+        # folders sit behind a /var -> /private/var link.
+        self.repo = Path(tempfile.mkdtemp()).resolve()
         self.addCleanup(shutil.rmtree, self.repo, True)
         self.git("init", "--initial-branch=main")
         self.git("config", "user.email", "test@example.invalid")
