@@ -9,6 +9,7 @@ import threading
 import unittest
 import urllib.error
 import urllib.request
+from html.parser import HTMLParser
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
@@ -1029,6 +1030,35 @@ class AssetTest(ServerCase):
         self.assertEqual(status, 200)
         self.assertIn(b"<title>ficelo</title>", body)
         self.assertTrue(headers["Content-Type"].startswith("text/html"))
+
+    def test_the_header_icon_opens_the_project_page_in_a_new_tab(self):
+        """The icon left of the breadcrumb is a plain link, so middle-click and
+        keyboard activation work. `noreferrer` keeps this server's address out
+        of the request GitHub receives."""
+        class Links(HTMLParser):
+            def __init__(self):
+                super().__init__()
+                self.stack, self.found = [], None
+
+            def handle_starttag(self, tag, attrs):
+                attrs = dict(attrs)
+                if tag == "a":
+                    self.stack.append(attrs)
+                if tag == "img" and "brand" in (attrs.get("class") or "").split() and self.stack:
+                    self.found = self.stack[-1]
+
+            def handle_endtag(self, tag):
+                if tag == "a" and self.stack:
+                    self.stack.pop()
+
+        _, page, _ = self.get("/")
+        parser = Links()
+        parser.feed(page.decode("utf-8"))
+        link = parser.found
+        self.assertIsNotNone(link, "the header icon should be wrapped in a link")
+        self.assertEqual(link["href"], "https://github.com/lichenran1234/ficelo-ide")
+        self.assertEqual(link["target"], "_blank")
+        self.assertLessEqual({"noopener", "noreferrer"}, set(link["rel"].split()))
 
     def test_every_asset_the_page_asks_for_exists(self):
         """Catches a rename on one side only, which a browser reports as a

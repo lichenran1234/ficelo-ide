@@ -752,6 +752,7 @@ body {
 .search { width: 150px; }
 .seg { padding: 3px 8px; }
 .brand { flex: none; }
+.brand-link { flex: none; display: flex; align-items: center; border-radius: 4px; }
 
 /* Emoji have no font on a headless server, and the glyph column should not
    collapse when a character is missing. */
