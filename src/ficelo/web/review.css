@@ -1,0 +1,39 @@
+/* Repository review uses the application's existing palette and controls. */
+.review-repo-button, .review-repository, .review-commit-row button, .review-file, button.change-group, .commit-file-heading {
+  color: var(--ink); font: inherit; border: 0; background: transparent; text-align: left; cursor: pointer;
+}
+.review-repo-button { display: block; width: 100%; padding: 10px 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; border-bottom: 1px solid var(--line); font-size: 12px; }
+.review-repo-button:hover, .review-repository:hover, .review-file.is-active, .commit.is-active { background: var(--accent-soft); }
+.review-picker { padding: 8px; border-bottom: 1px solid var(--line); }
+.review-picker[hidden], .commit-file-content[hidden] { display: none; }
+.review-search, .review-base-input, .review-worktrees { box-sizing: border-box; min-width: 0; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 4px; padding: 5px 6px; font: 11px var(--mono); }
+.review-search, .review-worktrees { width: 100%; }
+.review-repositories { max-height: 300px; overflow: auto; }
+.review-repository { display: grid; grid-template-columns: 1fr auto; gap: 3px 8px; width: 100%; padding: 7px 4px; border-bottom: 1px solid var(--line); font-size: 11px; }
+.review-repository small { grid-column: 1 / -1; overflow-wrap: anywhere; color: var(--ink-soft); }
+.review-base-control { display: flex; align-items: center; gap: 6px; margin: 6px 0; color: var(--ink-soft); font-size: 11px; }
+.review-base-input { flex: 1; width: 0; }
+.review-base-control button { color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 4px; padding: 4px 6px; font: inherit; cursor: pointer; }
+.review-file { width: 100%; grid-template-columns: 18px minmax(0, 1fr) auto; }
+button.change-group { width: 100%; }
+.review-commit-row { display: flex; align-items: stretch; border-top: 1px solid var(--line); }
+.review-commit-row .commit { min-width: 0; flex: 1; padding-left: 2px; }
+.review-commit-row .commit-fold { flex: none; width: 25px; padding: 0; text-align: center; color: var(--ink-soft); }
+.commit-document { padding: 0; scroll-padding-top: 70px; overflow-anchor: none; }
+.commit-banner { position: sticky; top: 0; z-index: 4; display: flex; flex-direction: column; gap: 4px; padding: 10px 16px; background: var(--bg-raised); border-bottom: 1px solid var(--line); }
+.commit-banner strong { font-size: 14px; overflow-wrap: anywhere; }
+.commit-banner span { color: var(--ink-soft); font-size: 11px; }
+.commit-file { margin: 12px 12px 20px; border: 1px solid var(--line); border-radius: 5px; overflow: hidden; }
+.commit-file-heading { display: flex; align-items: center; width: 100%; gap: 8px; padding: 9px; background: var(--bg-sunk); border-bottom: 1px solid var(--line); font-size: 12px; }
+.commit-file-name { flex: 1; min-width: 0; overflow-wrap: anywhere; font-family: var(--mono); }
+.commit-file-content { position: relative; min-width: 0; }
+
+.review-base-control > .review-base { white-space: pre; }
+
+.commit-file-heading-row { display: flex; align-items: center; background: var(--bg-sunk); border-bottom: 1px solid var(--line); }
+.commit-file-heading-row .commit-file-heading { flex: 1; min-width: 0; border-bottom: 0; }
+.review-copy-path { flex: none; margin: 0 8px; }
+.review-diff-shell { display: flex; flex-direction: column; height: 100%; }
+.review-diff-canvas { flex: 1; min-height: 0; }
+.review-diff-header { display: flex; align-items: center; min-height: 34px; padding-left: 12px; border-bottom: 1px solid var(--line); background: var(--bg-sunk); font: 12px var(--mono); }
+.review-diff-header > span { flex: 1; min-width: 0; overflow-wrap: anywhere; }

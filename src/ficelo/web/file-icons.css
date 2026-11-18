@@ -1,0 +1,42 @@
+/* File symbols share a restrained palette, with contrast in both themes. */
+:root {
+  --file-icon-muted: #697783;
+  --file-icon-blue: #3278ab;
+  --file-icon-cyan: #267f8e;
+  --file-icon-gold: #a47718;
+  --file-icon-green: #3b8061;
+  --file-icon-violet: #8261aa;
+  --file-icon-red: #b25361;
+  --file-icon-orange: #af6630;
+}
+:root[data-theme="dark"] {
+  --file-icon-muted: #a3aeba;
+  --file-icon-blue: #78b3df;
+  --file-icon-cyan: #75bfcd;
+  --file-icon-gold: #d9b75e;
+  --file-icon-green: #7ebda1;
+  --file-icon-violet: #b69bdd;
+  --file-icon-red: #e48e9b;
+  --file-icon-orange: #e5a574;
+}
+.row .file-glyph {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+.file-icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  flex: none;
+  color: var(--file-icon-muted);
+  pointer-events: none;
+}
+.file-icon[data-tone="blue"] { color: var(--file-icon-blue); }
+.file-icon[data-tone="cyan"] { color: var(--file-icon-cyan); }
+.file-icon[data-tone="gold"] { color: var(--file-icon-gold); }
+.file-icon[data-tone="green"] { color: var(--file-icon-green); }
+.file-icon[data-tone="violet"] { color: var(--file-icon-violet); }
+.file-icon[data-tone="red"] { color: var(--file-icon-red); }
+.file-icon[data-tone="orange"] { color: var(--file-icon-orange); }

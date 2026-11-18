@@ -1,0 +1,92 @@
+/* A configured document colors its whole scrollport, including empty space.
+   The explicit Light guard also protects Dark mode during a view transition. */
+html[data-theme="light"] .preview-scroll[data-file-background],
+html[data-theme="light"] .preview-scroll[data-file-background] .markdown {
+  background-color: var(--file-paper);
+}
+
+html[data-theme="light"] .preview-scroll[data-file-background] .markdown {
+  --color-border: var(--file-border);
+  --color-thead-bg: var(--file-header);
+  --color-text-primary: var(--file-ink);
+  --color-text-secondary: var(--file-muted);
+  --color-text-gray: var(--file-muted);
+  --color-primary: var(--file-link);
+  --color-primary--hover: var(--file-link);
+}
+
+html[data-theme="light"] .preview-scroll[data-file-background] .markdown table,
+html[data-theme="light"] .preview-scroll[data-file-background] .markdown tr {
+  background-color: var(--file-row);
+  color: var(--file-ink);
+}
+
+html[data-theme="light"] .preview-scroll[data-file-background] .markdown tbody tr:nth-child(even) {
+  background-color: var(--file-stripe);
+  color: var(--file-stripe-ink);
+  --color-text-primary: var(--file-stripe-ink);
+  --color-text-secondary: var(--file-stripe-ink);
+  --color-text-gray: var(--file-stripe-ink);
+  --color-primary: var(--file-stripe-link);
+  --color-primary--hover: var(--file-stripe-link);
+}
+
+html[data-theme="light"] .preview-scroll[data-file-background] .markdown thead,
+html[data-theme="light"] .preview-scroll[data-file-background] .markdown thead tr,
+html[data-theme="light"] .preview-scroll[data-file-background] .markdown th {
+  background-color: var(--file-header);
+  color: var(--file-header-ink);
+  --color-text-primary: var(--file-header-ink);
+  --color-text-secondary: var(--file-header-ink);
+  --color-text-gray: var(--file-header-ink);
+  --color-primary: var(--file-header-link);
+  --color-primary--hover: var(--file-header-link);
+}
+
+html[data-theme="light"] .preview-scroll[data-file-background] .markdown tr,
+html[data-theme="light"] .preview-scroll[data-file-background] .markdown th,
+html[data-theme="light"] .preview-scroll[data-file-background] .markdown td {
+  border-color: var(--file-border);
+}
+
+/* Metadata cells otherwise use the application chrome's fixed ink. */
+html[data-theme="light"] .preview-scroll[data-file-background] .markdown td {
+  color: inherit;
+}
+
+/* Inline code and marked text keep their own pale surfaces. Fenced code
+   retains its independent syntax palette, even on dark reading paper. */
+html[data-theme="light"] .preview-scroll[data-file-background] .markdown :not(pre) > code {
+  color: var(--file-inline-ink);
+}
+
+html[data-theme="light"] .preview-scroll[data-file-background] .markdown mark {
+  color: var(--file-mark-ink);
+  --color-primary: var(--file-mark-ink);
+  --color-primary--hover: var(--file-mark-ink);
+}
+
+html[data-theme="light"] .preview-scroll[data-file-background] .markdown pre {
+  --color-text-primary: #2d3d50;
+  --color-text-secondary: #586069;
+  --color-text-gray: #909090;
+  --color-primary: #607cd2;
+  --color-primary--hover: #4c68bb;
+}
+
+html[data-theme="light"] .preview-scroll[data-file-background] .markdown .diagram-note {
+  color: var(--file-warning);
+}
+
+html[data-theme="light"] .preview-scroll[data-file-background] .markdown blockquote:is(.warning, .tip) {
+  color: var(--file-callout-ink);
+  --color-text-primary: var(--file-callout-ink);
+  --color-text-secondary: var(--file-callout-ink);
+  --color-text-gray: var(--file-callout-ink);
+  --color-primary: var(--file-callout-link);
+  --color-primary--hover: var(--file-callout-link);
+}
+
+html[data-theme="light"] .preview-scroll[data-file-background] .markdown blockquote.warning::before {
+  color: var(--file-callout-ink);
+}

@@ -1,0 +1,20 @@
+{
+  "files": {
+    "licenses/ELK-NOTICES.txt": "961cd38aee6ea3a82e90c64c414405c443e49664779ac248d275d74d805ac246",
+    "licenses/ELK-SOURCE.md": "2d4d191316ab646dfaa8c79bf6a11a8d120cd9f06bbca85e526034f9203936b3",
+    "licenses/KaTeX-fonts-OFL-1.1.txt": "169648698abeb6fa68cc49e085c492154201afb36943b9081bdd7d7f137ee442",
+    "licenses/Mermaid-12.0.0-NOTICES.txt": "aac78c01cf5a46d08307af50c40da6cf9f731972024d3891a5b60c296df1375d",
+    "md-reader-theme/LICENSE.atom-one-syntax": "e1bd6bab503e4d7990504df1e646f6e7465a9096648304335e4c0b55c88f1f54",
+    "md-reader-theme/LICENSE.md-reader": "aeba2515405dae8aa8c3180fc634408b03870268f0ef53b80e6ca0b1104284a4",
+    "md-reader-theme/LICENSE.md-reader-theme": "b6f40f64c23f48abde3668e696e61a1335f9f8f62c92266ebeb9678fcd158050"
+  },
+  "packages": {
+    "@highlightjs/cdn-assets": "11.9.0",
+    "@xterm/addon-fit": "0.11.0",
+    "@xterm/xterm": "6.0.0",
+    "katex": "0.19.1",
+    "marked": "9.1.0",
+    "mermaid": "12.0.0",
+    "monaco-editor": "0.56.0"
+  }
+}

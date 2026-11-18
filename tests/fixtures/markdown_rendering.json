@@ -1,0 +1,112 @@
+[
+  {
+    "name": "image_emphasis",
+    "source": "![*important* and `code`](image.png \"Title\")",
+    "html": "<p><img src=\"image.png\" alt=\"*important* and `code`\" title=\"Title\"></p>\n"
+  },
+  {
+    "name": "image_nested_link",
+    "source": "![[label](doc.md)](image.png)",
+    "html": "<p><img src=\"image.png\" alt=\"[label](doc.md)\"></p>\n"
+  },
+  {
+    "name": "image_escape",
+    "source": "![a\\*b\\*](image.png)",
+    "html": "<p><img src=\"image.png\" alt=\"a\\*b\\*\"></p>\n"
+  },
+  {
+    "name": "angle_links",
+    "source": "<https://example.com/?a=1&b=2> <a@example.com>",
+    "html": "<p><a href=\"https://example.com/?a=1&amp;b=2\">https://example.com/?a=1&amp;b=2</a> <a href=\"mailto:a@example.com\">a@example.com</a></p>\n"
+  },
+  {
+    "name": "reference_image",
+    "source": "![*label*][pic]\n\n[pic]: image.png \"title\"",
+    "html": "<p><img src=\"image.png\" alt=\"*label*\" title=\"title\"></p>\n"
+  },
+  {
+    "name": "reference_collapsed",
+    "source": "[label][]\n\n[label]: doc.md",
+    "html": "<p><a href=\"doc.md\">label</a></p>\n"
+  },
+  {
+    "name": "reference_case",
+    "source": "[LABEL]\n\n[label]: doc.md",
+    "html": "<p><a href=\"doc.md\">LABEL</a></p>\n"
+  },
+  {
+    "name": "table_escaped",
+    "source": "| a | b |\n| --- | --- |\n| x\\|y | z |",
+    "html": "<table>\n<thead>\n<tr>\n<th>a</th>\n<th>b</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>x|y</td>\n<td>z</td>\n</tr>\n</tbody></table>\n"
+  },
+  {
+    "name": "table_missing",
+    "source": "a|b\n---|---\n1\n2|3|4",
+    "html": "<table>\n<thead>\n<tr>\n<th>a</th>\n<th>b</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1</td>\n<td></td>\n</tr>\n<tr>\n<td>2</td>\n<td>3</td>\n</tr>\n</tbody></table>\n"
+  },
+  {
+    "name": "table_inline",
+    "source": "a|b\n:---|---:\n**bold**|[link](doc.md)",
+    "html": "<table>\n<thead>\n<tr>\n<th align=\"left\">a</th>\n<th align=\"right\">b</th>\n</tr>\n</thead>\n<tbody><tr>\n<td align=\"left\"><strong>bold</strong></td>\n<td align=\"right\"><a href=\"doc.md\">link</a></td>\n</tr>\n</tbody></table>\n"
+  },
+  {
+    "name": "table_no_body",
+    "source": "a|b\n---|---",
+    "html": "<table>\n<thead>\n<tr>\n<th>a</th>\n<th>b</th>\n</tr>\n</thead>\n</table>\n"
+  },
+  {
+    "name": "list_start",
+    "source": "0. zero\n1. one\n\n999999999. last",
+    "html": "<ol start=\"0\">\n<li><p>zero</p>\n</li>\n<li><p>one</p>\n</li>\n<li><p>last</p>\n</li>\n</ol>\n"
+  },
+  {
+    "name": "list_task_loose",
+    "source": "- [ ] first\n\n- [x] second",
+    "html": "<ul>\n<li><p><input disabled=\"\" type=\"checkbox\"> \nfirst</p>\n</li>\n<li><p><input checked=\"\" disabled=\"\" type=\"checkbox\"> \nsecond</p>\n</li>\n</ul>\n"
+  },
+  {
+    "name": "list_task_nested",
+    "source": "- [x] first\n  - [ ] nested\n\n    paragraph",
+    "html": "<ul>\n<li><input checked=\"\" disabled=\"\" type=\"checkbox\"> first<ul>\n<li><p><input disabled=\"\" type=\"checkbox\"> \nnested</p>\n<p>paragraph</p>\n</li>\n</ul>\n</li>\n</ul>\n"
+  },
+  {
+    "name": "fence_four",
+    "source": "````js\n```\n````",
+    "html": "<pre><code class=\"language-js\">```\n</code></pre>\n"
+  },
+  {
+    "name": "fence_unclosed",
+    "source": "```js\ncode\n",
+    "html": "<pre><code class=\"language-js\">code\n</code></pre>\n"
+  },
+  {
+    "name": "fence_indentation",
+    "source": "   ```js\n   x\n  y\n   ```",
+    "html": "<pre><code class=\"language-js\">x\n  y\n</code></pre>\n"
+  },
+  {
+    "name": "boundary-2-1",
+    "source": "> quote\n===\n",
+    "html": "<blockquote>\n<h1>quote</h1>\n</blockquote>\n"
+  },
+  {
+    "name": "boundary-2-6",
+    "source": "> quote\n2. item\n",
+    "html": "<blockquote>\n<p>quote\n2. item</p>\n</blockquote>\n"
+  },
+  {
+    "name": "boundary-2-7",
+    "source": "> quote\n    code\n",
+    "html": "<blockquote>\n<p>quote\n    code</p>\n</blockquote>\n"
+  },
+  {
+    "name": "boundary-3-3",
+    "source": "- item\n> quote\n",
+    "html": "<ul>\n<li>item<blockquote>\n<p>quote</p>\n</blockquote>\n</li>\n</ul>\n"
+  },
+  {
+    "name": "boundary-3-9",
+    "source": "- item\n<div>body</div>\n",
+    "html": "<ul>\n<li>item<div>body</div></li>\n</ul>\n"
+  }
+]

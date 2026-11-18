@@ -1,0 +1,72 @@
+ficelo's own code is licensed under MIT. The bundled components below retain
+their separate copyright notices and licence terms. The licence texts and
+source-access information are included in the paths named below.
+
+Library bundles are unmodified and pinned; re-fetch or verify them with
+`python3 tools/vendor.py [--check]`. Supplemental notices are kept outside the
+directories replaced by that command. See docs/vendoring.md for maintenance.
+
+--------------------------------------------------------------------------------
+Monaco Editor 0.56.0
+  Copyright (c) 2016 - present Microsoft Corporation
+  MIT
+  src/ficelo/web/vendor/monaco/         LICENSE, ThirdPartyNotices.txt
+
+  Monaco itself bundles further third-party code; those notices are reproduced
+  verbatim in ThirdPartyNotices.txt alongside it.
+
+--------------------------------------------------------------------------------
+marked 9.1.0
+  Copyright (c) 2018+, MarkedJS
+  Copyright (c) 2011-2018, Christopher Jeffrey
+  MIT (with the original Markdown BSD notice)
+  src/ficelo/web/vendor/marked/         LICENSE
+
+--------------------------------------------------------------------------------
+highlight.js 11.9.0 (common languages and Dockerfile grammar)
+  Copyright (c) 2006, Ivan Sagalaev
+  BSD-3-Clause
+  src/ficelo/web/vendor/highlight/      LICENSE
+
+--------------------------------------------------------------------------------
+Markdown content stylesheet adapted from md-reader and @md-reader/theme 1.0.23
+  Copyright (c) 2018-present Bener
+  Copyright (c) 2021 md-reader
+  Atom One Light / One Dark: Copyright (c) 2016 GitHub Inc.
+  MIT
+  src/ficelo/web/vendor/md-reader-theme/ LICENSE.md-reader, LICENSE.md-reader-theme
+                                        LICENSE.atom-one-syntax
+  The syntax styles also retain Daniel Gamage's attribution and highlight.js
+  BSD-3-Clause terms in src/ficelo/web/vendor/highlight/LICENSE.
+  Adapted stylesheet: src/ficelo/web/markdown.css
+
+--------------------------------------------------------------------------------
+Mermaid 12.0.0
+  MIT
+  src/ficelo/web/vendor/mermaid/        LICENSE
+
+  Embedded third-party components keep their own terms, including MIT, ISC,
+  BSD-3-Clause, Apache and Eclipse licences. DOMPurify is distributed under its
+  Apache-2.0 option. Component versions, attributions and complete licence texts:
+  src/ficelo/web/vendor/licenses/Mermaid-12.0.0-NOTICES.txt
+
+  ELK's generated layout code has additional notices and source availability:
+  src/ficelo/web/vendor/licenses/ELK-NOTICES.txt
+  src/ficelo/web/vendor/licenses/ELK-SOURCE.md
+
+--------------------------------------------------------------------------------
+KaTeX 0.19.1
+  JavaScript and CSS: MIT
+  src/ficelo/web/vendor/katex/          LICENSE
+
+  Fonts: SIL Open Font License 1.1
+  Copyright (c) 2009-2010 Design Science, Inc.
+  Copyright (c) 2014-2018 Khan Academy
+  Complete font terms, copyright notices and Reserved Font Names:
+  src/ficelo/web/vendor/licenses/KaTeX-fonts-OFL-1.1.txt
+
+xterm.js 6.0.0 and @xterm/addon-fit 0.11.0
+  https://github.com/xtermjs/xterm.js
+  License: MIT
+  License text: src/ficelo/web/vendor/xterm/LICENSE
+                src/ficelo/web/vendor/xterm-fit/LICENSE

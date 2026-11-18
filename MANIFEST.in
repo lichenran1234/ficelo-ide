@@ -1,0 +1,5 @@
+include AGENTS.md CLAUDE.md NOTICE
+recursive-include docs *.md *.png
+recursive-include tools *.py *.sh
+recursive-include tests *.py *.html
+recursive-include tests/fixtures *.json
